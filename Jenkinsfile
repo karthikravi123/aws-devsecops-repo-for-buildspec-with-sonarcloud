@@ -9,7 +9,7 @@ pipeline {
         sh 'mvn clean verify sonar:sonar -Dsonar.projectKey=aws-project-practice1 -Dsonar.organization=aws-project-practice1 -Dsonar.host.url=https://sonarcloud.io -Dsonar.token=242ebbe0a6a08aa426ce2245d324e0125a2d5f64'
       }
     }
-    
+  }
 
     
     stage('RunSCAAnalysisUsingSnyk') {
@@ -19,5 +19,5 @@ pipeline {
         }
       }
     }
-  }
+  
 }
