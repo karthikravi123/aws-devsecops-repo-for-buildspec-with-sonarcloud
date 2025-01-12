@@ -13,7 +13,7 @@ pipeline {
       stage('RunSCAAnalysisUsingSnyk'){
             steps {
                   withCredentials([string(credentialsId: 'SNYK_TOKEN', variable: 'SYNK_TOKEN')]){
-                        sh 'synk test -fn --org=karthikravi123 --project=aws-devsecops-repo-for-buildspec-with-sonarcloud --token=${SNYK_TOKEN}'
+                        sh 'mvn synk:test -fn '
                   }
             }
 
