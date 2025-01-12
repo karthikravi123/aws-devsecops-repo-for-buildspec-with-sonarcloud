@@ -10,9 +10,16 @@ pipeline {
 			}
         } 
       
+      stage{
+            steps {
+                  sh 'npm install -g snyk'
+            }
+      }
+
+
       stage('RunSCAAnalysisUsingSnyk'){
             steps {
-                  withCredentials([string(credentialsId: 'SNYK_TOKEN', variable: 'SYNK_TOKEN')]){
+                  withCredentials([string(credentialsId: 'SNYK_TOKEN', variable: 'SNYK_TOKEN')]){
                         sh 'mvn synk:test -fn '
                   }
             }
