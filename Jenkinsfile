@@ -14,7 +14,7 @@ pipeline {
             steps {
                   sh 'npm install -g snyk'
             }
-   }
+   
 
 
       stage('RunSCAAnalysisUsingSnyk'){
@@ -30,3 +30,4 @@ pipeline {
 
   
 
+}
