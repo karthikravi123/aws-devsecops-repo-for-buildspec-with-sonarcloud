@@ -10,11 +10,11 @@ pipeline {
 			}
         } 
       
-      stage(
+      stage('Install Snyk')
             steps {
                   sh 'npm install -g snyk'
             }
-      )
+   }
 
 
       stage('RunSCAAnalysisUsingSnyk'){
@@ -29,4 +29,4 @@ pipeline {
   }
 
   
-}
+
