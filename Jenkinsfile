@@ -10,11 +10,7 @@ pipeline {
       }
     }
     
-    stage('Install Snyk') {
-      steps {
-        sh 'sudo npm install -g snyk'
-      }
-    }
+
     
     stage('RunSCAAnalysisUsingSnyk') {
       steps {
