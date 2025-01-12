@@ -20,7 +20,7 @@ pipeline {
 
     stage('Build') {
       steps {
-            withDockerRegistry([credentialsId: "dockerlogin", url: "" ])
+            withDockerRegistry([credentialsId: "dockerlogin", url: "https://hub.docker.com" ])
             script{
                   app = docker.build("asg")
             }
@@ -30,7 +30,7 @@ pipeline {
     stage('Push') {
       steps {
             script{
-                  docker.withRegistry('https://851725524822.dkr.ecr.us-west-2.amazonaws.coms', 'ecr:us-west-2:aws-credentials'){
+                  docker.withRegistry('https://851725524822.dkr.ecr.us-west-2.amazonaws.com', 'ecr:us-west-2:aws-credentials'){
                         app.push("latest")
                   }
             }
